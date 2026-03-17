@@ -2,7 +2,7 @@
 
 int main()
 {
-	format fro;
+	flag fro;
 	finit(&fro);
 	printf("zero: %d\n", fro.zero);
 	printf("plus: %d\n", fro.plus);

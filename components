@@ -1,4 +1,4 @@
 _printf - main function
-format - stuct for storing flags
-finit - initializer for format stuct
+flag - stuct for storing flags
+finit - initializer for flag stuct
 inttostr - function for converting ints to strings

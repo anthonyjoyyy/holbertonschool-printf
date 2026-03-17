@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
-typedef struct format
+typedef struct flag
 {
 	int zero;
 	int plus;
@@ -13,8 +13,9 @@ typedef struct format
 	int space;
 	int width;
 	int per;
-} format;
+} flag;
 
-void finit(format *);
+void finit(flag *);
+int _printf(const char *format, ...);
 
 #endif
