@@ -12,16 +12,16 @@ int dflag(flag *flager, const char *format, int pos)
 		switch (format[pos])
 		{
 		case '0':
-			printf("ZERO");
+			flager->zero = 1;
 			break;
 		case '+':
-			printf("PLUS");
+			flager->plus = 1;
 			break;
 		case '-':
-			printf("MINUS");
+			flager->minus = 1;
 			break;
 		case ' ':
-			printf("SPACE");
+			flager->space = 1;
 			break;
 		default:
 			ff = 0;
