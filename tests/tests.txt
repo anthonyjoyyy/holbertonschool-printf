@@ -1,4 +1,5 @@
 ###List of tests###
 base-test.c - test printing 1 string from arg with _printf
+test2.c - test flag capture
 finit-tester - test finit function
 main.c - holberton project example tester
