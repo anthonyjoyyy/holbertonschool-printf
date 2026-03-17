@@ -5,6 +5,7 @@ inttostr - function for converting ints to strings
 printchar - print a single given char
 dflags - detect flags from given string and update a flag struct, returning new string position
 
+yet to make:
 dwidth:
 	take flag stuct, string, and string pos
 	return new string pos
@@ -18,3 +19,28 @@ specifier:
 	take flag struct and char
 	execute apropriate function based on char
 	void (struct *flag, char);
+
+func for %c:
+	print char from varg
+	suported flags:
+	{'-','1..9'}
+	in-progress prototype:
+	printc(flag *, va_arg(varg, char));
+func for %s:
+	print string from varg
+	suported flags:
+	{'-','1..9','.'}
+	in-progress prototype:
+	printc(flag *, va_arg(varg, char*));
+func for %d:
+	print int from varg
+	suported flags:
+	{'0','+','-',' ','1..9'}
+	in-progress prototype:
+	printc(flag *, va_arg(varg, int));
+func for %f:
+	print float form varg
+	suported flags:
+	{'0','+','-',' ','1..9','.'}
+	in-progress prototype:
+	printc(flag *, va_arg(varg, float));
