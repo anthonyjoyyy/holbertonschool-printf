@@ -14,4 +14,6 @@ typedef struct format
 	int per;
 } format;
 
+void finit(format *);
+
 #endif
