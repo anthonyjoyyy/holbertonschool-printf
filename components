@@ -5,12 +5,16 @@ inttostr - function for converting ints to strings
 printchar - print a single given char
 dflags - detect flags from given string and update a flag struct, returning new string position
 
-detectwidth:
+dwidth:
 	take flag stuct, string, and string pos
 	return new string pos
 	int (struct flag*, char *, int)
 
-detectper:
+dper:
 	take flag struct, string, and string pos
 	return new string pos
 	int (struct flag*, char *, int)
+specifier: 
+	take flag struct and char
+	execute apropriate function based on char
+	void (struct *flag, char);
