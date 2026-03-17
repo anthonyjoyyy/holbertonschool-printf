@@ -1,0 +1,3 @@
+_printf - main function
+format - stuct for storing flags
+inttostr - function for converting ints to strings
