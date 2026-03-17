@@ -15,7 +15,9 @@ typedef struct flag
 	int per;
 } flag;
 
+void printchar(char);
 void finit(flag *);
 int _printf(const char *format, ...);
+int dflag(flag *,const char *, int);
 
 #endif

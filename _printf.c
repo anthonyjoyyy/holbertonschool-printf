@@ -6,23 +6,22 @@
  */
 int _printf(const char *format, ...)
 {
-	char const *wc;
-	int pos = 0; int pc = 0;
+	flag flager;
+	int pos = 0;
+	int pc = 0;
 
 	while (format[pos])
 	{
+		finit(&flager);
 		if (format[pos] == '%')
 		{
-/**			int b
-			pos++;
-			switch (f) */
+			pos = dflag(&flager, format, pos);
 		}
 		else
 		{
-			wc = &format[pos];
-			write(1, wc, 1);
+			printchar(format[pos]);
 			pos++;
 		}
 	}
-	return pc;
+	return (pc);
 }
