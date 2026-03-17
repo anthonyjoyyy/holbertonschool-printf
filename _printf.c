@@ -22,22 +22,23 @@ void finit(flag *f)
  */
 int _printf(const char *format, ...)
 {
-	char const *a;
-	int x = 0;
-	int i = 0;
+	char const *wc;
+	int pos = 0; int pc = 0;
 
-	while (format[x])
+	while (format[pos])
 	{
-		if (format[x] == '%')
+		if (format[pos] == '%')
 		{
-			/**code*/
+/**			int b
+			pos++;
+			switch (f) */
 		}
 		else
 		{
-			a = &format[x];
-			write(1, a, 1);
-			x++;
+			wc = &format[pos];
+			write(1, wc, 1);
+			pos++;
 		}
 	}
-	return i;
+	return pc;
 }
