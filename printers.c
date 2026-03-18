@@ -48,4 +48,5 @@ void prntc(flag *flager, char c)
 		write(1, a, 1);
 		a++;
 	}
+	free(a);
 }
