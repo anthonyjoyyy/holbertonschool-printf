@@ -1,5 +1,9 @@
 _PRINTF reborn
 
+# Working-On:
+    - Sebastion - dwidth function
+    - Anthony - 
+
 # TODO:
     - [ ] create dwidth fuction
     - [ ] create dper function
