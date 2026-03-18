@@ -43,10 +43,11 @@ void prntc(flag *flager, char c)
 	else
 		a[n-1] = c;
 
-	while (*a)
+	i = 0;
+	while (a[i])
 	{
-		write(1, a, 1);
-		a++;
+		write(1, &a[i], 1);
+		i++;
 	}
 	free(a);
 }
