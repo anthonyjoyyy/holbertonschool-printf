@@ -1,9 +1,13 @@
 _printf - main function
+
 flag - stuct for storing flags
 finit - initializer for flag stuct
-inttostr - function for converting ints to strings
-prntchar - print a single given char
+
 dflags - detect flags from given string and update a flag struct, returning new string position
+specifier - execute the aptopiate fuction given a char, and pass flag struct and va_arg
+
+prntchar - print a single given char
+prntc - print a singe char formated with flags and width
 
 yet to make:
 dwidth:
@@ -15,17 +19,6 @@ dper:
 	take flag struct, string, and string pos
 	return new string pos
 	int (struct flag*, char *, int)
-specifier: 
-	take flag struct, va_list, and char
-	execute apropriate function based on char
-	void (struct *flag, char);
-
-func for %c:
-	print char from varg
-	suported flags:
-	{'-','1..9'}
-	in-progress prototype:
-	printc(flag *, va_arg(varg, char));
 func for %s:
 	print string from varg
 	suported flags:
