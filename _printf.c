@@ -18,22 +18,20 @@ int _printf(const char *format, ...)
 		{
 			if (format[pos + 1] == '%')
 			{
-				printchar(format[pos++]);
+				printchar(format[++pos]);
 			}
 			else
 			{
 				pos = dflag(&flager, format, pos);
 /**
 *				pos = dwidth(&flager, format, pos);
-*				pos = dper(&flager, format, pos);
-*				pos = specifier(&flager, format[pos++]);
-*/
+*				pos = dper(&flager, format, pos); */
+/**				specifier(&flager, format[++pos]); */
 			}
 		}
 		else
 		{
-			printchar(format[pos]);
-			pos++;
+			printchar(format[pos++]);
 		}
 	}
 	return (pc);
