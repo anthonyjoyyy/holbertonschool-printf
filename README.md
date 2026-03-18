@@ -1,11 +1,11 @@
 _PRINTF reborn
 
 # Working-On:
-    - Sebastion - dwidth function
+    - Sebastion - 
     - Anthony - 
 
 # TODO:
-    - [ ] create dwidth fuction
+    - [X] create dwidth fuction
     - [ ] create dper function
     - [X] create specifier function
 
