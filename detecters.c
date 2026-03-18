@@ -35,4 +35,28 @@ int dflag(flag *flager, const char *format, int pos)
 		}
 	}
 	return (pos);
+}/**
+ * dwidth - 
+ * @flager: 
+ * @format: main string to get width from
+ * @pos: postion in main string
+ * Return: first position in string without after width
+ */
+int dwidth(flag *flager, const char *format, int pos)
+{
+	int ff = 1;
+
+	if (flager == NULL)
+		return (-1);
+	while (ff)
+	{
+		if (format[pos] <= '9' && format[pos] >= '0')
+		{
+			flager->width = ((flager->width * 10) + (format[pos] - '0'));
+			pos++;
+		}
+		else
+			ff = 0;
+	}
+	return (pos);
 }

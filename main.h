@@ -31,5 +31,6 @@ void prntchar(char);
 void finit(flag *);
 int _printf(const char *format, ...);
 int dflag(flag *, const char *, int);
+int dwidth(flag *, const char *, int);
 
 #endif
