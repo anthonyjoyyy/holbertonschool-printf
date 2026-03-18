@@ -12,6 +12,7 @@ int _printf(const char *format, ...)
 	int pc = 0;
 	va_list varg;
 
+	printf("full string: %s\n", format);
 	va_start(varg, format);
 	while (format[pos])
 	{
@@ -21,6 +22,7 @@ int _printf(const char *format, ...)
 			if (format[pos + 1] == '%')
 			{
 				prntchar(format[++pos]);
+				pos++;
 			}
 			else
 			{
@@ -28,7 +30,7 @@ int _printf(const char *format, ...)
 /**
 *				pos = dwidth(&flager, format, pos);
 *				pos = dper(&flager, format, pos); */
-				specifier(&flager, varg, format[++pos]);
+				specifier(&flager, varg, format[pos++]);
 			}
 		}
 		else
