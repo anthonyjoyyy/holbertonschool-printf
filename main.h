@@ -27,6 +27,7 @@ typedef struct flag
 
 void specifier(flag *, va_list, char);
 void prntc(flag *, char);
+void prnts(flag *, char *);
 void prntchar(char);
 void finit(flag *);
 int _printf(const char *format, ...);

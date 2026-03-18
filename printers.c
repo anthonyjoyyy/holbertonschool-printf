@@ -46,3 +46,65 @@ void prntc(flag *flager, char c)
 	write(1, a, n);
 	free(a);
 }
+
+/**
+ */
+void prnts(flag *flager, char *str)
+{
+	int stln = 0;
+	int wdt = 0;
+	char *str2;
+	int wn;
+	int i;
+	int x;
+
+	if (flager == NULL)
+		return;
+	
+	while (str[stln])
+	{
+		stln++;
+	}
+
+	if (flager->width)
+		wdt = flager->width;
+
+	if (wdt > stln)
+	{
+		wn = wdt;
+
+		str2 = malloc(wn * sizeof(*str2));
+		if (!str2)
+			return;
+
+		i = 0;
+		while (i < wn)
+		{
+			str2[i++] = ' ';
+		}
+		if (flager->minus)
+		{
+			i = 0;
+			while (str[i])
+			{
+				str2[i] = str[i];
+				i++;
+			}
+		}
+		else
+		{
+			x = stln;
+			while (x >= 0)
+			{
+				str2[i--] = str[x--];
+			}
+		}
+	}
+	else
+	{
+		wn = stln;
+		str2 = str;
+	}
+
+	write(1, str2, wn);
+}

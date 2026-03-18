@@ -13,6 +13,7 @@ void specifier(flag *flager, va_list varg, char c)
 		prntc(flager, va_arg(varg, int));
 		break;
 	case 's':
+		prnts(flager, va_arg(varg, char *));
 		break;
 	case 'd':
 		break;
