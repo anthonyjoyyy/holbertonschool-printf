@@ -1,7 +1,10 @@
 #include "main.h"
 
+/**
+ * printchar - print a single char
+ * @a: char to print
+ */
 void printchar(char a)
 {
-	char *b = &a;
-	write(1, b, 1);
+	write(1, &a, 1);
 }

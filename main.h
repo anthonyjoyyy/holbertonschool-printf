@@ -18,6 +18,6 @@ typedef struct flag
 void printchar(char);
 void finit(flag *);
 int _printf(const char *format, ...);
-int dflag(flag *,const char *, int);
+int dflag(flag *, const char *, int);
 
 #endif

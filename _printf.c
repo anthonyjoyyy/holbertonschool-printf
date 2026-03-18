@@ -2,7 +2,8 @@
 
 /**
  * _printf - printf clone
- *
+ * @format: string to print, with format specifers to substitue
+ * Return: number of characters printed
  */
 int _printf(const char *format, ...)
 {
@@ -23,11 +24,11 @@ int _printf(const char *format, ...)
 			{
 				pos = dflag(&flager, format, pos);
 /**
- *	 			pos = dwidth(&flager, format, pos);
- * 				pos = dper(&flager, format, pos);
- * 				pos = specifier(&flager, format[pos++]);
- */
- 			}
+*				pos = dwidth(&flager, format, pos);
+*				pos = dper(&flager, format, pos);
+*				pos = specifier(&flager, format[pos++]);
+*/
+			}
 		}
 		else
 		{
