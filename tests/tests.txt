@@ -3,5 +3,6 @@ base-test.c - test printing 1 string from arg with _printf
 test2.c - test flag capture
 test3.c - test %% printing
 test4.c - test %c printing
+test5.c - test %c printing with flag and width support
 finit-tester - test finit function
 main.c - holberton project example tester
