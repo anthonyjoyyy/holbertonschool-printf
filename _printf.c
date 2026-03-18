@@ -10,7 +10,9 @@ int _printf(const char *format, ...)
 	flag flager;
 	int pos = 0;
 	int pc = 0;
+	va_list varg;
 
+	va_start(varg, format);
 	while (format[pos])
 	{
 		finit(&flager);
@@ -18,7 +20,7 @@ int _printf(const char *format, ...)
 		{
 			if (format[pos + 1] == '%')
 			{
-				printchar(format[++pos]);
+				prntchar(format[++pos]);
 			}
 			else
 			{
@@ -26,13 +28,14 @@ int _printf(const char *format, ...)
 /**
 *				pos = dwidth(&flager, format, pos);
 *				pos = dper(&flager, format, pos); */
-/**				specifier(&flager, format[++pos]); */
+				specifier(&flager, varg, format[++pos]);
 			}
 		}
 		else
 		{
-			printchar(format[pos++]);
+			prntchar(format[pos++]);
 		}
 	}
+	va_end(varg);
 	return (pc);
 }

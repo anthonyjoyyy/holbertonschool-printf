@@ -2,7 +2,7 @@ _printf - main function
 flag - stuct for storing flags
 finit - initializer for flag stuct
 inttostr - function for converting ints to strings
-printchar - print a single given char
+prntchar - print a single given char
 dflags - detect flags from given string and update a flag struct, returning new string position
 
 yet to make:
@@ -16,7 +16,7 @@ dper:
 	return new string pos
 	int (struct flag*, char *, int)
 specifier: 
-	take flag struct and char
+	take flag struct, va_list, and char
 	execute apropriate function based on char
 	void (struct *flag, char);
 

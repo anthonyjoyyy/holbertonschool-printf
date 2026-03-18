@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * printchar - print a single char
+ * prntchar - print a single char
  * @a: char to print
  */
-void printchar(char a)
+void prntchar(char a)
 {
 	write(1, &a, 1);
 }
