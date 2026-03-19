@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 		{
 			if (format[pos + 1] == '%')
 			{
-				prntchar(format[++pos]);
+				pc += prntchar(format[++pos]);
 				pos++;
 			}
 			else
