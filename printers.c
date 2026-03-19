@@ -53,8 +53,6 @@ void prnts(flag *flager, char *str)
 {
 	int stln = 0;
 	int wdt = 0;
-	char *str2;
-	int wn;
 	int i;
 	int x;
 
@@ -71,7 +69,8 @@ void prnts(flag *flager, char *str)
 
 	if (wdt > stln)
 	{
-		wn = wdt;
+		char *str2;
+		int wn = wdt;
 
 		str2 = malloc(wn * sizeof(*str2));
 		if (!str2)
@@ -99,12 +98,11 @@ void prnts(flag *flager, char *str)
 				str2[i--] = str[x--];
 			}
 		}
+		write(1, str2, wn);
+		free(str2);
 	}
 	else
 	{
-		wn = stln;
-		str2 = str;
+		write(1, str, stln);
 	}
-
-	write(1, str2, wn);
 }
