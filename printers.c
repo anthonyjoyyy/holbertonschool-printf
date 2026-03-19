@@ -64,7 +64,6 @@ void prnts(flag *flager, char *str)
 
 	if (flager->width)
 		wdt = flager->width;
-
 	if (wdt > stln)
 	{
 		char *str2;
@@ -87,6 +86,7 @@ void prnts(flag *flager, char *str)
 		else
 		{
 			x = stln;
+			i = wn;
 			while (x >= 0)
 			{
 				str2[i--] = str[x--];
