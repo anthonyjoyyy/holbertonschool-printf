@@ -60,30 +60,3 @@ int dwidth(flag *flager, const char *format, int pos)
 	}
 	return (pos);
 }
-
-/**
- * dper - detect precision (e.g. .3)
- * @flager: pointer to flag struct
- * @format: main string
- * @pos: position in string
- * Return: new position after precision
- */
-int dper(flag *flager, const char *format, int pos)
-{
-	if (flager == NULL)
-		return (-1);
-
-	if (format[pos] == '.')
-	{
-		flager->per = 1;
-		pos++;
-
-		while (format[pos] >= '0' && format[pos] <= '9')
-		{
-			flager->width = (flager->width * 10) + (format[pos] - '0');
-			pos++;
-		}
-	}
-
-	return (pos);
-}
