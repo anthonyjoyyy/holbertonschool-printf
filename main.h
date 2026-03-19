@@ -25,10 +25,10 @@ typedef struct flag
 	int per;
 } flag;
 
-void specifier(flag *, va_list, char);
-void prntc(flag *, char);
-void prnts(flag *, char *);
-void prntchar(char);
+int specifier(flag *, va_list, char);
+int prntc(flag *, char);
+int prnts(flag *, char *);
+int prntchar(char);
 void finit(flag *);
 void sinit(char *, int);
 int _printf(const char *format, ...);

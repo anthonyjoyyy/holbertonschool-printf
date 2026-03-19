@@ -4,9 +4,10 @@
  * prntchar - print a single char
  * @a: char to print
  */
-void prntchar(char a)
+int prntchar(char a)
 {
 	write(1, &a, 1);
+	return (1);
 }
 
 /**
@@ -14,13 +15,13 @@ void prntchar(char a)
  * @flager: pointer to flag type variable
  * @c: character to print
  */
-void prntc(flag *flager, char c)
+int prntc(flag *flager, char c)
 {
 	char *a;
 	int n;
 
 	if (flager == NULL)
-		return;
+		return (0);
 
 	if (flager->width)
 		n = flager->width;
@@ -29,7 +30,7 @@ void prntc(flag *flager, char c)
 
 	a = malloc((n + 1) * sizeof(*a));
 	if (!a)
-		return;
+		return (0);
 
 	sinit(a, n);
 
@@ -40,6 +41,7 @@ void prntc(flag *flager, char c)
 
 	write(1, a, n);
 	free(a);
+	return (n);
 }
 
 /**
@@ -47,7 +49,7 @@ void prntc(flag *flager, char c)
  * @flager: pointer to flag stuct containing flag and width settings
  * @str: string to print
  */
-void prnts(flag *flager, char *str)
+int prnts(flag *flager, char *str)
 {
 	char *lstr;
 	int stln = 0;
@@ -57,7 +59,7 @@ void prnts(flag *flager, char *str)
 	int x;
 
 	if (flager == NULL)
-		return;
+		return (0);
 
 	while (str[stln])
 	{
@@ -68,7 +70,7 @@ void prnts(flag *flager, char *str)
 	
 	lstr = malloc(stln * sizeof(*lstr));
 	if (!lstr)
-		return;
+		return (0);
 
 	sinit(lstr, stln);
 	i = 0;
@@ -87,7 +89,7 @@ void prnts(flag *flager, char *str)
 		if (!str2)
 		{
 			free(lstr);
-			return;
+			return (0);
 		}
 
 		sinit(str2, wn);
@@ -112,10 +114,12 @@ void prnts(flag *flager, char *str)
 		write(1, str2, wn);
 		free(str2);
 		free(lstr);
+		return (wn);
 	}
 	else
 	{
 		write(1, lstr, stln);
 		free(lstr);
+		return (stln);
 	}
 }

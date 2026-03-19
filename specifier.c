@@ -5,21 +5,28 @@
  * @flager:
  * @
  */
-void specifier(flag *flager, va_list varg, char c)
+int specifier(flag *flager, va_list varg, char c)
 {
+	int cc;
+	
 	switch (c)
 	{
 	case 'c':
-		prntc(flager, va_arg(varg, int));
+		cc = prntc(flager, va_arg(varg, int));
+		return (cc);
 		break;
 	case 's':
-		prnts(flager, va_arg(varg, char *));
+		cc = prnts(flager, va_arg(varg, char *));
+		return (cc);
 		break;
 	case 'd':
+		return(0);
 		break;
 	case 'f':
+		return(0);
 		break;
 	default:
+		return (0);
 		break;
 	}
 }
