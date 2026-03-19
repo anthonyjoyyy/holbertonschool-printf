@@ -49,8 +49,10 @@ void prntc(flag *flager, char c)
  */
 void prnts(flag *flager, char *str)
 {
+	char *lstr;
 	int stln = 0;
-	int wdt = 0;
+	int wdt = flager->width;
+	int p = flager->per;
 	int i;
 	int x;
 
@@ -61,9 +63,21 @@ void prnts(flag *flager, char *str)
 	{
 		stln++;
 	}
+	if (p > -1 && p < stln)
+		stln = p;
+	
+	lstr = malloc(stln * sizeof(*lstr));
+	if (!lstr)
+		return;
 
-	if (flager->width)
-		wdt = flager->width;
+	sinit(lstr, stln);
+	i = 0;
+	while (str[i] && i < stln)
+	{
+		lstr[i] = str[i];
+		i++;
+	}
+
 	if (wdt > stln)
 	{
 		char *str2;
@@ -71,15 +85,18 @@ void prnts(flag *flager, char *str)
 
 		str2 = malloc(wn * sizeof(*str2));
 		if (!str2)
+		{
+			free(lstr);
 			return;
+		}
 
 		sinit(str2, wn);
 		if (flager->minus)
 		{
 			i = 0;
-			while (str[i])
+			while (lstr[i])
 			{
-				str2[i] = str[i];
+				str2[i] = lstr[i];
 				i++;
 			}
 		}
@@ -89,14 +106,16 @@ void prnts(flag *flager, char *str)
 			i = wn;
 			while (x >= 0)
 			{
-				str2[i--] = str[x--];
+				str2[i--] = lstr[x--];
 			}
 		}
 		write(1, str2, wn);
 		free(str2);
+		free(lstr);
 	}
 	else
 	{
-		write(1, str, stln);
+		write(1, lstr, stln);
+		free(lstr);
 	}
 }
