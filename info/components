@@ -9,18 +9,13 @@ specifier - execute the aptopiate fuction given a char, and pass flag struct and
 
 prntchar - print a single given char
 prntc - print a singe char formated with flags and width
+prnts - print a string with width and flags
 
 yet to make:
 dper:
 	take flag struct, string, and string pos
 	return new string pos
 	int (struct flag*, char *, int)
-func for %s:
-	print string from varg
-	suported flags:
-	{'-','1..9','.'}
-	in-progress prototype:
-	printc(flag *, va_arg(varg, char*));
 func for %d:
 	print int from varg
 	suported flags:

@@ -1,7 +1,7 @@
 _PRINTF reborn
 
 # Working-On:
-    - Sebastion - %s printing
+    - Sebastion - 
     - Anthony - 
 
 # TODO:
@@ -10,6 +10,6 @@ _PRINTF reborn
     - [X] create specifier function
 
     - [X] %c - function for printing char
-    - [ ] %s - function for printing string
+    - [X] %s - function for printing string
     - [ ] %d - function for printing int
     - [ ] %f - function for printing float
