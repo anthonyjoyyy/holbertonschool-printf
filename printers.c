@@ -17,7 +17,6 @@ void prntchar(char a)
 void prntc(flag *flager, char c)
 {
 	char *a;
-	int i = 0;
 	int n;
 
 	if (flager == NULL)
@@ -32,11 +31,7 @@ void prntc(flag *flager, char c)
 	if (!a)
 		return;
 
-	a[n] = '\0';
-	while (i < n)
-	{
-		a[i++] = ' ';
-	}
+	sinit(a, n);
 
 	if (flager->minus)
 		a[0] = c;
@@ -79,11 +74,7 @@ void prnts(flag *flager, char *str)
 		if (!str2)
 			return;
 
-		i = 0;
-		while (i < wn)
-		{
-			str2[i++] = ' ';
-		}
+		sinit(str2, wn);
 		if (flager->minus)
 		{
 			i = 0;

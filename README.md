@@ -1,7 +1,7 @@
 _PRINTF reborn
 
 # Working-On:
-    - Sebastion - sinit
+    - Sebastion -
     - Anthony - 
 
 # TODO:

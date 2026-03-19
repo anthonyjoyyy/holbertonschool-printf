@@ -30,6 +30,7 @@ void prntc(flag *, char);
 void prnts(flag *, char *);
 void prntchar(char);
 void finit(flag *);
+void sinit(char *, int);
 int _printf(const char *format, ...);
 int dflag(flag *, const char *, int);
 int dwidth(flag *, const char *, int);
