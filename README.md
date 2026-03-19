@@ -1,7 +1,7 @@
 _PRINTF reborn
 
 # Working-On:
-    - Sebastion -
+    - Sebastion - character counting
     - Anthony - 
 
 # TODO:
