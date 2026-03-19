@@ -13,7 +13,7 @@ void finit(flag *f)
 	f->minus = 0;
 	f->space = 0;
 	f->width = 0;
-	f->per = 0;
+	f->per = -1;
 }
 /**
  * sinit - inialize a string to ' ', and terminate
