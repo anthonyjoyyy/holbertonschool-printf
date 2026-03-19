@@ -5,7 +5,7 @@ _PRINTF reborn
     - Anthony - implement dper function 
 
 # TODO:
-    - [X] create dwidth fuction
+    - [X] create dwidth function
     - [ ] create dper function
     - [X] create specifier function
 
