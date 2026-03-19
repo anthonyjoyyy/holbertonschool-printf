@@ -2,7 +2,7 @@ _PRINTF reborn
 
 # Working-On:
     - Sebastion - character counting
-    - Anthony - 
+    - Anthony - implement dper function 
 
 # TODO:
     - [X] create dwidth fuction

@@ -34,5 +34,6 @@ void sinit(char *, int);
 int _printf(const char *format, ...);
 int dflag(flag *, const char *, int);
 int dwidth(flag *, const char *, int);
+int dper(flag *, const char *, int);
 
 #endif
