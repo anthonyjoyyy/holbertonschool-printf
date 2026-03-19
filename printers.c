@@ -41,13 +41,16 @@ void prntc(flag *flager, char c)
 	if (flager->minus)
 		a[0] = c;
 	else
-		a[n-1] = c;
+		a[n - 1] = c;
 
 	write(1, a, n);
 	free(a);
 }
 
 /**
+ * prnts - prints a string formated with flags and width
+ * @flager: pointer to flag stuct containing flag and width settings
+ * @str: string to print
  */
 void prnts(flag *flager, char *str)
 {
@@ -58,7 +61,7 @@ void prnts(flag *flager, char *str)
 
 	if (flager == NULL)
 		return;
-	
+
 	while (str[stln])
 	{
 		stln++;
