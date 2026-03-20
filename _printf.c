@@ -14,8 +14,12 @@ int _printf(const char *format, ...)
 
 	va_start(varg, format);
 	for (pos = 0; format[pos]; pos++)
+	{
 		if (format[pos] == '%' && format[pos + 1] == '\0')
 			return (-1);
+		if (format[pos] == '%' && format[pos + 1] == '%')
+			pos++;
+	}
 
 	pos = 0;
 	while (format[pos])
@@ -39,9 +43,7 @@ int _printf(const char *format, ...)
 			}
 		}
 		else
-		{
 			pc += prntchar(format[pos++]);
-		}
 	}
 	va_end(varg);
 	return (pc);

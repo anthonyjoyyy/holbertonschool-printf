@@ -7,8 +7,7 @@
  */
 int prntchar(char a)
 {
-	write(1, &a, 1);
-	return (1);
+	return(write(1, &a, 1));
 }
 
 /**
@@ -74,10 +73,8 @@ int prnts(flag *flager, char *str)
 		}
 		sinit(str2, wn);
 		if (flager->minus)
-		{
 			for (i = 0; lstr[i]; i++)
 				str2[i] = lstr[i];
-		}
 		else
 		{
 			x = stln;
@@ -99,6 +96,10 @@ int prnts(flag *flager, char *str)
 
 /**
  * prntund - handle printing when an undifined specifier is passed
+ * @flager: flager struct, holds posision '%' was first detected
+ * @format: main string to print from
+ * @pos: curent posion in format
+ * Return: number of characters printed
  */
 int prntund(flag *flager, const char *format, int pos)
 {
@@ -121,6 +122,5 @@ int prntund(flag *flager, const char *format, int pos)
 	}
 	write(1, str, cc);
 	free(str);
-
 	return (cc);
 }
