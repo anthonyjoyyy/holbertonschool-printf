@@ -8,7 +8,7 @@ dflags - detect flags from given string and update a flag struct, returning new 
 dwidth - detect width in given string and save to flag struct, returning new string pos
 lstrgen - allocate space for a string based on length and  fill with main str
 fstrlen - get the length of a string, and change based on per flag
-specifier - execute the apropriate fuction given a char, and pass flag struct and va_arg
+specifier - execute the apropriate fuction given a string and position, and pass flag struct and va_arg
 
 prntchar - print a single given char and return number of printed character
 prntc - print a singe char formated with flags and widt and return number of printed characterh

@@ -1,7 +1,7 @@
 _PRINTF reborn
 
 # Working-On:
-    - Sebastion - undifined specifier
+    - Sebastion - printerr
     - Anthony - 
 
 # TODO:
