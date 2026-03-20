@@ -59,10 +59,7 @@ int prnts(flag *flager, char *str)
 	if (flager == NULL)
 		return (0);
 	if (str == NULL)
-	{
-		write(1, &"(null)", 6);
-		return (6);
-	}
+		return (write(1, &"(null)", 6));
 	stln = fstrlen(flager, str);
 	lstr = lstrgen(str, stln);
 	if (flager->width > stln)
