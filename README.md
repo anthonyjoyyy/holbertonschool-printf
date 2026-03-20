@@ -1,7 +1,7 @@
 _PRINTF reborn
 
 # Working-On:
-    - Sebastion - character counting
+    - Sebastion - undifined specifier
     - Anthony - 
 
 # TODO:

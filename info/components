@@ -6,11 +6,14 @@ sinit - initialize a string to ' ' and terminate
 
 dflags - detect flags from given string and update a flag struct, returning new string position
 dwidth - detect width in given string and save to flag struct, returning new string pos
-specifier - execute the aptopiate fuction given a char, and pass flag struct and va_arg
+lstrgen - allocate space for a string based on length and  fill with main str
+fstrlen - get the length of a string, and change based on per flag
+specifier - execute the apropriate fuction given a char, and pass flag struct and va_arg
 
-prntchar - print a single given char
-prntc - print a singe char formated with flags and width
-prnts - print a string with width and flags
+prntchar - print a single given char and return number of printed character
+prntc - print a singe char formated with flags and widt and return number of printed characterh
+prnts - print a string with width and flag and return number of printed characters
+prntund - handle printing of an undifined specifier
 
 yet to make:
 dper:
