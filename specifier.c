@@ -15,6 +15,8 @@ int specifier(flag *flager, va_list varg, const char *format, int pos)
 
 	switch (c)
 	{
+	case '\0':
+		return (0);
 	case 'c':
 		cc = prntc(flager, va_arg(varg, int));
 		return (cc);
