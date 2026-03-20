@@ -14,6 +14,7 @@ void finit(flag *f)
 	f->space = 0;
 	f->width = 0;
 	f->per = -1;
+	f->flaged = -1;
 }
 /**
  * sinit - inialize a string to ' ', and terminate

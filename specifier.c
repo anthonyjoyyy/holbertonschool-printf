@@ -4,11 +4,13 @@
  * specifier - call apopriate function for printing based on given char
  * @flager: flag struct storing formating options
  * @varg: va_list varable to print
- * @c: format character
+ * @format: main string
+ * @pos: pos of specifier
  * Return: number of characters printed
  */
-int specifier(flag *flager, va_list varg, char c)
+int specifier(flag *flager, va_list varg, const char *format, int pos)
 {
+	char c = format[pos];
 	int cc;
 
 	switch (c)
@@ -24,6 +26,7 @@ int specifier(flag *flager, va_list varg, char c)
 	case 'f':
 		return (0);
 	default:
-		return (0);
+		cc = prntund(flager, format, pos);
+		return (cc);
 	}
 }

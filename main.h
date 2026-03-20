@@ -14,6 +14,7 @@
  * @space: 1, if true, else 0
  * @width: 1, if true, else 0
  * @per: 1, if true, else 0
+ * @flaged: posision where % was first found
  */
 typedef struct flag
 {
@@ -23,11 +24,13 @@ typedef struct flag
 	int space;
 	int width;
 	int per;
+	int flaged;
 } flag;
 
-int specifier(flag *, va_list, char);
+int specifier(flag *, va_list, const char *, int);
 int prntc(flag *, char);
 int prnts(flag *, char *);
+int prntund(flag *, const char *, int);
 int prntchar(char);
 void finit(flag *);
 void sinit(char *, int);

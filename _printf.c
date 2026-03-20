@@ -18,6 +18,7 @@ int _printf(const char *format, ...)
 		finit(&flager);
 		if (format[pos] == '%')
 		{
+			flager.flaged = pos;
 			pos++;
 			if (format[pos] == '%')
 			{
@@ -29,7 +30,7 @@ int _printf(const char *format, ...)
 				pos = dflag(&flager, format, pos);
 				pos = dwidth(&flager, format, pos);
 /**				pos = dper(&flager, format, pos); */
-				pc += specifier(&flager, varg, format[pos++]);
+				pc += specifier(&flager, varg, format, pos++);
 			}
 		}
 		else

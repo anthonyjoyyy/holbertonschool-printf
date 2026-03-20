@@ -94,3 +94,31 @@ int prnts(flag *flager, char *str)
 		return (stln);
 	}
 }
+
+/**
+ * prntund - handle printing when an undifined specifier is passed
+ */
+int prntund(flag *flager, const char *format, int pos)
+{
+	int cc = 0;
+	int len;
+	int fpos;
+	char *str;
+
+	if (flager == NULL)
+		return (0);
+
+	fpos = flager->flaged;
+	len = (pos - fpos) + 1;
+	str = malloc((len + 1) * sizeof(*str));
+	sinit(str, len);
+
+	while (fpos <= pos)
+	{
+		str[cc++] = format[fpos++];
+	}
+	write(1, str, cc);
+	free(str);
+
+	return (cc);
+}
