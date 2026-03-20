@@ -2,6 +2,9 @@
 
 int main()
 {
-	_printf("printing a %% %c", '6');
+	_printf("expect:\n");
+	printf("printing a %% %c\n", '6');
+	_printf("result:\n");
+	_printf("printing a %% %c\n", '6');
 	return (0);
 }

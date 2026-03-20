@@ -2,6 +2,8 @@
 
 int main()
 {
-	_printf("he%+%0llo", "string2");
+	_printf("Expect:\n");
+	_printf("he%%0llo\n");
+	_printf("he%%0llo\n", "string2");
 	return (0);
 }
