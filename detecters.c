@@ -9,13 +9,10 @@
  */
 int dflag(flag *flager, const char *format, int pos)
 {
-	int ff = 1;
-
 	if (flager == NULL)
 		return (-1);
-	while (ff)
+	while (1)
 	{
-		pos++;
 		switch (format[pos])
 		{
 		case '0':
@@ -31,24 +28,23 @@ int dflag(flag *flager, const char *format, int pos)
 			flager->space = 1;
 			break;
 		default:
-			ff = 0;
+			return (pos);
 		}
+		pos++;
 	}
-	return (pos);
-}/**
- * dwidth - 
- * @flager: 
+}
+/**
+ * dwidth - detect and save width from string
+ * @flager: pointer to flag stuct to store width
  * @format: main string to get width from
  * @pos: postion in main string
  * Return: first position in string without after width
  */
 int dwidth(flag *flager, const char *format, int pos)
 {
-	int ff = 1;
-
 	if (flager == NULL)
 		return (-1);
-	while (ff)
+	while (1)
 	{
 		if (format[pos] <= '9' && format[pos] >= '0')
 		{
@@ -56,7 +52,6 @@ int dwidth(flag *flager, const char *format, int pos)
 			pos++;
 		}
 		else
-			ff = 0;
+			return (pos);
 	}
-	return (pos);
 }

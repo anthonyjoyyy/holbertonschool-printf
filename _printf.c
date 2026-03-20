@@ -18,9 +18,10 @@ int _printf(const char *format, ...)
 		finit(&flager);
 		if (format[pos] == '%')
 		{
-			if (format[pos + 1] == '%')
+			pos++;
+			if (format[pos] == '%')
 			{
-				pc += prntchar(format[++pos]);
+				pc += prntchar(format[pos]);
 				pos++;
 			}
 			else
