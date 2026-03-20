@@ -31,6 +31,8 @@ int prnts(flag *, char *);
 int prntchar(char);
 void finit(flag *);
 void sinit(char *, int);
+char *lstrgen(char *, int);
+int fstrlen(flag *flager, char *str);
 int _printf(const char *format, ...);
 int dflag(flag *, const char *, int);
 int dwidth(flag *, const char *, int);

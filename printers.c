@@ -3,6 +3,7 @@
 /**
  * prntchar - print a single char
  * @a: char to print
+ * Return: number of characters printed
  */
 int prntchar(char a)
 {
@@ -14,6 +15,7 @@ int prntchar(char a)
  * prntc - print a character with formating
  * @flager: pointer to flag type variable
  * @c: character to print
+ * Return: number of characters printed
  */
 int prntc(flag *flager, char c)
 {
@@ -31,7 +33,6 @@ int prntc(flag *flager, char c)
 	a = malloc((n + 1) * sizeof(*a));
 	if (!a)
 		return (0);
-
 	sinit(a, n);
 
 	if (flager->minus)
@@ -48,68 +49,38 @@ int prntc(flag *flager, char c)
  * prnts - prints a string formated with flags and width
  * @flager: pointer to flag stuct containing flag and width settings
  * @str: string to print
+ * Return: number of characters printed
  */
 int prnts(flag *flager, char *str)
 {
 	char *lstr;
-	int stln = 0;
-	int wdt = flager->width;
-	int p = flager->per;
-	int i;
-	int x;
+	int stln, i, x;
 
 	if (flager == NULL)
 		return (0);
-
-	while (str[stln])
+	stln = fstrlen(flager, str);
+	lstr = lstrgen(str, stln);
+	if (flager->width > stln)
 	{
-		stln++;
-	}
-	if (p > -1 && p < stln)
-		stln = p;
-	
-	lstr = malloc(stln * sizeof(*lstr));
-	if (!lstr)
-		return (0);
+		int wn = flager->width;
+		char *str2 = malloc(wn * sizeof(*str2));
 
-	sinit(lstr, stln);
-	i = 0;
-	while (str[i] && i < stln)
-	{
-		lstr[i] = str[i];
-		i++;
-	}
-
-	if (wdt > stln)
-	{
-		char *str2;
-		int wn = wdt;
-
-		str2 = malloc(wn * sizeof(*str2));
 		if (!str2)
 		{
 			free(lstr);
 			return (0);
 		}
-
 		sinit(str2, wn);
 		if (flager->minus)
 		{
-			i = 0;
-			while (lstr[i])
-			{
+			for (i = 0; lstr[i]; i++)
 				str2[i] = lstr[i];
-				i++;
-			}
 		}
 		else
 		{
 			x = stln;
-			i = wn;
-			while (x >= 0)
-			{
+			for (i = wn; x >= 0;)
 				str2[i--] = lstr[x--];
-			}
 		}
 		write(1, str2, wn);
 		free(str2);
