@@ -8,11 +8,16 @@
 int _printf(const char *format, ...)
 {
 	flag flager;
-	int pos = 0;
+	int pos;
 	int pc = 0;
 	va_list varg;
 
 	va_start(varg, format);
+	for (pos = 0; format[pos]; pos++)
+		if (format[pos] == '%' && format[pos + 1] == '\0')
+			return (-1);
+
+	pos = 0;
 	while (format[pos])
 	{
 		finit(&flager);
