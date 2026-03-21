@@ -1,7 +1,7 @@
 _PRINTF reborn
 
 # Working-On:
-    - Sebastion - printerr
+    - Sebastion - %d printing
     - Anthony - 
 
 # TODO:
