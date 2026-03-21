@@ -124,3 +124,26 @@ int prntund(flag *flager, const char *format, int pos)
 	free(str);
 	return (cc);
 }
+
+/**
+ * prntd -
+ * @flager:
+ * @dig:
+ * Return:
+ */
+int prntd(flag *flager, int dig)
+{
+	char *str;
+	int dig2 = dig;
+	int len;
+
+	for (len = 0; dig2; len++)
+		dig2 = dig2 / 10;
+	if (dig < 0)
+		len++;
+	if (flager == NULL)
+		return (0);
+	str = inttostr(dig, len);
+
+	return (write(1, str, len));
+}
