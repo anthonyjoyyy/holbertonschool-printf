@@ -138,7 +138,10 @@ int prntd(flag *flager, int dig)
 	int dig2 = dig;
 	int len, i, x, z;
 
-	for (len = 0; dig2; len++)
+	if (!dig)
+		len = 1;
+	else
+		for (len = 0; dig2; len++)
 		dig2 = dig2 / 10;
 	if (dig < 0)
 		len++;
