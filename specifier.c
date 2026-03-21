@@ -23,10 +23,10 @@ int specifier(flag *flager, va_list varg, const char *format, int pos)
 		return (cc);
 	case 'd':
 		cc = prntd(flager, va_arg(varg, int));
-		return (0);
+		return (cc);
 	case 'i':
 		cc = prntd(flager, va_arg(varg, int));
-		return (0);
+		return (cc);
 	default:
 		cc = prntund(flager, format, pos);
 		return (cc);
