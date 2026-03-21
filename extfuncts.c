@@ -12,7 +12,7 @@ char *inttostr(int i, int len)
 		str = malloc((len + 1) * sizeof(*str));
 		if (!str)
 			return (0);
-		sinit(str, len);
+		sinit(str, len, ' ');
 
 		str[0] = '-';
 		for (y = 1; y < len; y++)
@@ -27,7 +27,7 @@ char *inttostr(int i, int len)
 		str = malloc((len + 1) * sizeof(*str));
 		if (!str)
 			return (0);
-		sinit(str, len);
+		sinit(str, len, ' ');
 
 		for (y = 0; y < len; y++)
 		{
