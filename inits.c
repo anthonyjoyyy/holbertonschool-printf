@@ -20,15 +20,16 @@ void finit(flag *f)
  * sinit - inialize a string to ' ', and terminate
  * @str: pointer to string
  * @n: length of string not including NULL byte
+ * @fill: character to fill string with
  */
-void sinit(char *str, int n)
+void sinit(char *str, int n, char fill)
 {
 	int i = 0;
 
 	str[n] = '\0';
 	while (i < n)
 	{
-		str[i++] = ' ';
+		str[i++] = fill;
 	}
 }
 

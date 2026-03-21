@@ -34,7 +34,7 @@ int prntd(flag *, int);
 int prntund(flag *, const char *, int);
 int prntchar(char);
 void finit(flag *);
-void sinit(char *, int);
+void sinit(char *, int, char);
 char *lstrgen(char *, int);
 char *inttostr(int, int);
 void revstr(char *, int, int);
