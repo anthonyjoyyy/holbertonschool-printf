@@ -32,7 +32,7 @@ int prntc(flag *flager, char c)
 	a = malloc((n + 1) * sizeof(*a));
 	if (!a)
 		return (0);
-	sinit(a, n);
+	sinit(a, n, ' ');
 
 	if (flager->minus)
 		a[0] = c;
@@ -71,7 +71,7 @@ int prnts(flag *flager, char *str)
 			free(lstr);
 			return (0);
 		}
-		sinit(str2, wn);
+		sinit(str2, wn, ' ');
 		if (flager->minus)
 			for (i = 0; lstr[i]; i++)
 				str2[i] = lstr[i];
@@ -114,7 +114,7 @@ int prntund(flag *flager, const char *format, int pos)
 	fpos = flager->flaged;
 	len = (pos - fpos) + 1;
 	str = malloc((len + 1) * sizeof(*str));
-	sinit(str, len);
+	sinit(str, len, ' ');
 
 	while (fpos <= pos)
 	{
@@ -134,8 +134,9 @@ int prntund(flag *flager, const char *format, int pos)
 int prntd(flag *flager, int dig)
 {
 	char *str;
+	char *tmpstr;
 	int dig2 = dig;
-	int len;
+	int len, i, x, z;
 
 	for (len = 0; dig2; len++)
 		dig2 = dig2 / 10;
@@ -144,6 +145,62 @@ int prntd(flag *flager, int dig)
 	if (flager == NULL)
 		return (0);
 	str = inttostr(dig, len);
+	if (flager->per > len)
+	{
+		tmpstr = malloc((flager->per + 1) * sizeof(*str));
+		tmpstr[len] = '\0';
+		for (z = 0; z < (flager->per - len); z++)
+			tmpstr[z] = '0';
+		for (z = 0; z < len; z++)
+			tmpstr[z + (flager->per - len)] = str[z];
+		len = flager->per;
+		str = tmpstr;
+	}
+	if (flager->space)
+	{
+		len++;
+		tmpstr = malloc((len + 1) * sizeof(*str));
+		tmpstr[0] = ' ';
+		for (z = 1; z < len; z++)
+			tmpstr[z] = str[z - 1];
+		str = tmpstr;
+	}
+	if (flager->plus)
+	{
+		len++;
+		tmpstr = malloc((len + 1) * sizeof(*str));
+		tmpstr[0] = '+';
+		for (z = 1; z < len; z++)
+			tmpstr[z] = str[z - 1];
+		str = tmpstr;
+	}
+	if (flager->width > len)
+	{
+		int wn = flager->width;
+		char *str2 = malloc(wn * sizeof(*str2));
 
+		if (!str2)
+		{
+			free(str);
+			return (0);
+		}
+		if (flager->zero)
+			sinit(str2, wn, '0');
+		else
+			sinit(str2, wn, ' ');
+		if (flager->minus)
+			for (i = 0; str[i]; i++)
+				str2[i] = str[i];
+		else
+		{
+			x = len;
+			for (i = wn; x >= 0;)
+				str2[i--] = str[x--];
+		}
+		write(1, str2, wn);
+		free(str2);
+		free(str);
+		return (wn);
+	}
 	return (write(1, str, len));
 }
