@@ -8,15 +8,22 @@
  */
 int main(void)
 {
-    _printf("Digit with width 12          :[%12d]\n", 542);
-    printf("Digit with width 12          :[%12d]\n", 542);
-    _printf("Digit with '-' and width 12  :[%-12d]\n", 542);
-    printf("Digit with '-' and width 12  :[%-12d]\n", 542);
-    _printf("Digit with '0', and width 12 :[%012d]\n", 542);
-    printf("Digit with '0', and width 12 :[%012d]\n", 542);
-    _printf("Digit with '+', and width 12 :[%+12d]\n", 542);
-    printf("Digit with '+', and width 12 :[%+12d]\n", 542);
-    _printf("Digit with ' ', and width 0  :[% d]\n", 542);
-    printf("Digit with ' ', and width 0  :[% d]\n", 542);
+	int len1;
+	int len2;
+
+	len1 = _printf("Digit with width 0 :[%d]\n", 1024);
+	len2 = printf("Digit with width 0 :[%d]\n", 1024);
+	_printf("Digit with width 12          :[%12d]\n", 1024);
+	printf("Digit with width 12          :[%12d]\n", 1024);
+	_printf("Digit with '-' and width 12  :[%-12d]\n", 1024);
+	printf("Digit with '-' and width 12  :[%-12d]\n", 1024);
+	_printf("Digit with '0', and width 12 :[%012d]\n", 1024);
+	printf("Digit with '0', and width 12 :[%012d]\n", 1024);
+	_printf("Digit with '+', and width 12 :[%+12d]\n", 1024);
+	printf("Digit with '+', and width 12 :[%+12d]\n", 1024);
+	_printf("Digit with ' ', and width 0  :[% d]\n", 1024);
+	printf("Digit with ' ', and width 0  :[% d]\n", 1024);
+	_printf("printing return 1 :[%d]\n", len1);
+	printf("printing return 2 :[%d]\n", len2);
     return (0);
 }
