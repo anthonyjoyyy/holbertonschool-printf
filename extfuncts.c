@@ -8,7 +8,6 @@ char *inttostr(int i, int len)
 
 	if (i < 0)
 	{
-		dig3 *= -1;
 		str = malloc((len + 1) * sizeof(*str));
 		if (!str)
 			return (0);
@@ -17,7 +16,7 @@ char *inttostr(int i, int len)
 		str[0] = '-';
 		for (y = 1; y < len; y++)
 		{
-			str[y] = '0' + (dig3 % 10);
+			str[y] = '0' + ((dig3 % 10) * -1);
 			dig3 = dig3 / 10;
 		}
 		revstr(str, 1, len - 1);
