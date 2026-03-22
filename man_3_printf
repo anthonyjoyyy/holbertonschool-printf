@@ -1,5 +1,6 @@
 .TH _PRINTF 3 "March 2026" "Holberton School" "_printf manual"
 
+.SH NAME
 _printf \- printf clone
 
 .SH SYNOPSIS
