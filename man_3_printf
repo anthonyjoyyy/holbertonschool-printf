@@ -1,0 +1,127 @@
+PRINTF PROJECT - TASK 2 22/03/26
+
+_printf \- printf clone
+
+.SH SYNOPSIS
+.B #include "main.h"
+.br
+.B int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+The
+.B _printf
+function is a simplified version of the standard C
+.B printf
+function. It writes the output to the standard output (stdout) according to the format string and the additional arguments provided.
+
+The function supports a limited set of conversion specifiers and flags.
+
+The format string may contain ordinary characters (which are printed as-is) and format specifiers starting with the '%' character.
+
+.SH FORMAT SPECIFIERS
+The following conversion specifiers are supported:
+.TP
+.B c
+Prints a single character.
+.TP
+.B s
+Prints a null-terminated string.
+.TP
+.B d
+Prints a signed integer in decimal notation.
+.TP
+.B i
+Same as 'd', prints a signed integer in decimal notation.
+.TP
+.B %%
+Prints a literal '%' character.
+.TP
+.B Any other character
+When an undefined specifier is encountered, it is printed as-is, including the leading '%'.
+
+.SH FLAGS
+The following flags can be used with the conversion specifiers:
+.TP
+.B +
+Prefix a positive number with a plus sign.
+.TP
+.B -
+Left-justify the output within the given field width.
+.TP
+.B 0
+Pad the output with leading zeros instead of spaces.
+.TP
+.B (space)
+Prefix a positive number with a space.
+.TP
+.B Width
+A decimal integer that specifies the minimum field width.
+
+Note: Precision and length modifiers are not supported in this implementation.
+
+.SH RETURN VALUE
+Upon successful completion, the number of characters printed is returned. If an error occurs, such as a null format string, the function returns -1.
+
+.SH ERRORS
+If a single '%' appears at the end of the format string without a specifier, _printf returns -1.
+
+.SH EXAMPLES
+The following examples illustrate typical usage:
+
+.nf
+#include "main.h"
+
+int len;
+len = _printf("Hello, World!\n");
+_printf("Character: %c\n", 'A');
+_printf("String: %s\n", "example");
+_printf("Integer: %d, %i\n", 42, -42);
+_printf("Percent sign: %%\n");
+.fi
+
+.SH SEE ALSO
+.BR printf (3)
+
+.SH COMPONENTS
+.TP
+.B flag
+Struct used to store flag settings for formatting.
+.TP
+.B finit
+Initialize a flag struct to default values.
+.TP
+.B sinit
+Initialize a string with spaces and null termination.
+.TP
+.B dflag
+Detect flags in the format string and update the flag struct.
+.TP
+.B dwidth
+Detect the width from the format string and update the flag struct.
+.TP
+.B lstrgen
+Allocate and generate a string based on a source string and length.
+.TP
+.B fstrlen
+Compute the string length and adjust according to precision.
+.TP
+.B specifier
+Determine which printing function to call based on the specifier.
+.TP
+.B prntchar
+Print a single character.
+.TP
+.B prntc
+Print a character with flags and width.
+.TP
+.B prnts
+Print a string with flags and width.
+.TP
+.B prntd
+Print a decimal integer with flags and width.
+.TP
+.B prntund
+Handle undefined specifiers and print them as-is.
+
+.SH AUTHOR
+Sebastion Price & Anthony Joy - Holberton C29
