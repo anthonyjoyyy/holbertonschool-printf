@@ -1,4 +1,4 @@
-PRINTF PROJECT - TASK 2 22/03/26
+.TH _PRINTF 3 "March 2026" "Holberton School" "_printf manual"
 
 _printf \- printf clone
 
@@ -21,16 +21,16 @@ The format string may contain ordinary characters (which are printed as-is) and 
 .SH FORMAT SPECIFIERS
 The following conversion specifiers are supported:
 .TP
-.B c
+.B %c
 Prints a single character.
 .TP
-.B s
+.B %s
 Prints a null-terminated string.
 .TP
-.B d
+.B %d
 Prints a signed integer in decimal notation.
 .TP
-.B i
+.B %i
 Same as 'd', prints a signed integer in decimal notation.
 .TP
 .B %%
