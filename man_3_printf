@@ -64,23 +64,25 @@ Note: Precision and length modifiers are not supported in this implementation.
 Upon successful completion, the number of characters printed is returned. If an error occurs, such as a null format string, the function returns -1.
 
 .SH EXAMPLES
-The following examples illustrate typical usage:
+Greet the world:
+_printf("Hello, World!\n")
+Output: "Hello, World!"
 
-.nf
-#include "main.h"
-int len;
+Print a character:
+_printf("Character: %c\n", 'A')
+Output: "Character: A"
 
-len = _printf("Hello, World!\n");           /* Output: Hello, World!
-                                                Return value: 13 */
-len = _printf("Character: %c\n", 'A');      /* Output: Character: A
-                                                Return value: 13 */
-len = _printf("String: %s\n", "example");   /* Output: String: example
-                                                Return value: 15 */
-len = _printf("Integer: %d, %i\n", 42, -42);/* Output: Integer: 42, -42
-                                                Return value: 17 */
-len = _printf("Percent sign: %%\n");        /* Output: Percent sign: %
-                                                Return value: 16 */
-.fi
+Print a string:
+_printf("String: %s\n", "example")
+Output: "String: example"
+
+Print integers:
+_printf("Integer: %d, %i\n", 42, -42)
+Output: "Integer: 42, -42"
+
+Print a percent sign:
+_printf("Percent sign: %%\n")
+Output: "Percent sign: %"
 
 .SH SEE ALSO
 .BR printf (3)
