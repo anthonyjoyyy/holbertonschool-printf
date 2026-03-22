@@ -64,27 +64,40 @@ Note: Precision and length modifiers are not supported in this implementation.
 Upon successful completion, the number of characters printed is returned. If an error occurs, such as a null format string, the function returns -1.
 
 .SH EXAMPLES
-.nf
-Greet the world:
+.TP
+.B Greet the world:
 _printf("Hello, World!\\n")
+.RS
 Output: "Hello, World!"
+.RE
 
-Print a character:
+.TP
+.B Print a character:
 _printf("Character: %c\\n", 'A')
+.RS
 Output: "Character: A"
+.RE
 
-Print a string:
+.TP
+.B Print a string:
 _printf("String: %s\\n", "example")
+.RS
 Output: "String: example"
+.RE
 
-Print integers:
+.TP
+.B Print integers:
 _printf("Integer: %d, %i\\n", 42, -42)
+.RS
 Output: "Integer: 42, -42"
+.RE
 
-Print a percent sign:
+.TP
+.B Print a percent sign:
 _printf("Percent sign: %%\\n")
+.RS
 Output: "Percent sign: %"
-.fi
+.RE
 
 .SH SEE ALSO
 .BR printf (3)
