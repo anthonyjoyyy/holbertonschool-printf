@@ -1,4 +1,4 @@
-.TH _PRINTF 3 "March 2026" "Holberton School" "_printf manual"
+.TH _PRINTF 3 "March 2026" "2.0" "_printf manual"
 
 .SH NAME
 _printf \- printf clone
@@ -63,66 +63,27 @@ Note: Precision and length modifiers are not supported in this implementation.
 .SH RETURN VALUE
 Upon successful completion, the number of characters printed is returned. If an error occurs, such as a null format string, the function returns -1.
 
-.SH ERRORS
-If a single '%' appears at the end of the format string without a specifier, _printf returns -1.
-
 .SH EXAMPLES
 The following examples illustrate typical usage:
 
 .nf
 #include "main.h"
-
 int len;
-len = _printf("Hello, World!\n");
-_printf("Character: %c\n", 'A');
-_printf("String: %s\n", "example");
-_printf("Integer: %d, %i\n", 42, -42);
-_printf("Percent sign: %%\n");
+
+len = _printf("Hello, World!\n");           /* Output: Hello, World!
+                                                Return value: 13 */
+len = _printf("Character: %c\n", 'A');      /* Output: Character: A
+                                                Return value: 13 */
+len = _printf("String: %s\n", "example");   /* Output: String: example
+                                                Return value: 15 */
+len = _printf("Integer: %d, %i\n", 42, -42);/* Output: Integer: 42, -42
+                                                Return value: 17 */
+len = _printf("Percent sign: %%\n");        /* Output: Percent sign: %
+                                                Return value: 16 */
 .fi
 
 .SH SEE ALSO
 .BR printf (3)
-
-.SH COMPONENTS
-.TP
-.B flag
-Struct used to store flag settings for formatting.
-.TP
-.B finit
-Initialize a flag struct to default values.
-.TP
-.B sinit
-Initialize a string with spaces and null termination.
-.TP
-.B dflag
-Detect flags in the format string and update the flag struct.
-.TP
-.B dwidth
-Detect the width from the format string and update the flag struct.
-.TP
-.B lstrgen
-Allocate and generate a string based on a source string and length.
-.TP
-.B fstrlen
-Compute the string length and adjust according to precision.
-.TP
-.B specifier
-Determine which printing function to call based on the specifier.
-.TP
-.B prntchar
-Print a single character.
-.TP
-.B prntc
-Print a character with flags and width.
-.TP
-.B prnts
-Print a string with flags and width.
-.TP
-.B prntd
-Print a decimal integer with flags and width.
-.TP
-.B prntund
-Handle undefined specifiers and print them as-is.
 
 .SH AUTHOR
 Sebastion Price & Anthony Joy - Holberton C29
