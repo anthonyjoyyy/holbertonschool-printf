@@ -65,23 +65,23 @@ Upon successful completion, the number of characters printed is returned. If an 
 
 .SH EXAMPLES
 Greet the world:
-_printf("Hello, World!\n")
+_printf("Hello, World!\\n")
 Output: "Hello, World!"
 
 Print a character:
-_printf("Character: %c\n", 'A')
+_printf("Character: %c\\n", 'A')
 Output: "Character: A"
 
 Print a string:
-_printf("String: %s\n", "example")
+_printf("String: %s\\n", "example")
 Output: "String: example"
 
 Print integers:
-_printf("Integer: %d, %i\n", 42, -42)
+_printf("Integer: %d, %i\\n", 42, -42)
 Output: "Integer: 42, -42"
 
 Print a percent sign:
-_printf("Percent sign: %%\n")
+_printf("Percent sign: %%\\n")
 Output: "Percent sign: %"
 
 .SH SEE ALSO
