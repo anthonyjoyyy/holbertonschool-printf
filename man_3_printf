@@ -64,6 +64,7 @@ Note: Precision and length modifiers are not supported in this implementation.
 Upon successful completion, the number of characters printed is returned. If an error occurs, such as a null format string, the function returns -1.
 
 .SH EXAMPLES
+.nf
 Greet the world:
 _printf("Hello, World!\\n")
 Output: "Hello, World!"
@@ -83,6 +84,7 @@ Output: "Integer: 42, -42"
 Print a percent sign:
 _printf("Percent sign: %%\\n")
 Output: "Percent sign: %"
+.fi
 
 .SH SEE ALSO
 .BR printf (3)
