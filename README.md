@@ -1,5 +1,5 @@
 # Working-On:
-	sebastion - update components list
+	sebastion - Update README
 	anthony - 
 # TODO:
 - [X] add comments
@@ -9,5 +9,5 @@
 - [X] variable naming
 - [ ] function breakdown and seporation
 - [X] update test description
-- [ ] update componets list
+- [X] update componets list
 - [ ] update readme for secription
