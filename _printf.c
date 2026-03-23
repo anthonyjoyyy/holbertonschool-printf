@@ -16,7 +16,10 @@ int _printf(const char *format, ...)
 	for (pos = 0; format[pos]; pos++)
 	{
 		if (format[pos] == '%' && format[pos + 1] == '\0')
+		{
+			va_end(varg);
 			return (-1);
+		}
 		if (format[pos] == '%' && format[pos + 1] == '%')
 			pos++;
 	}

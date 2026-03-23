@@ -66,7 +66,7 @@ int prnts(flag *flager, va_list varg)
 	if (flager->width > stln)
 	{
 		int wn = flager->width;
-		char *str2 = malloc(wn * sizeof(*str2));
+		char *str2 = malloc((wn + 1) * sizeof(*str2));
 
 		if (!str2)
 		{
@@ -160,30 +160,33 @@ int prntd(flag *flager, va_list varg)
 		for (z = 0; z < len; z++)
 			tmpstr[z + (flager->per - len)] = str[z];
 		len = flager->per;
+		free(str);
 		str = tmpstr;
 	}
-	if (flager->space)
+	if (flager->space && dig >= 0)
 	{
 		len++;
 		tmpstr = malloc((len + 1) * sizeof(*str));
 		tmpstr[0] = ' ';
 		for (z = 1; z < len; z++)
 			tmpstr[z] = str[z - 1];
+		free(str);
 		str = tmpstr;
 	}
-	if (flager->plus)
+	if (flager->plus && dig >= 0)
 	{
 		len++;
 		tmpstr = malloc((len + 1) * sizeof(*str));
 		tmpstr[0] = '+';
 		for (z = 1; z < len; z++)
 			tmpstr[z] = str[z - 1];
+		free(str);
 		str = tmpstr;
 	}
 	if (flager->width > len)
 	{
 		int wn = flager->width;
-		char *str2 = malloc(wn * sizeof(*str2));
+		char *str2 = malloc((wn + 1) * sizeof(*str2));
 
 		if (!str2)
 		{
@@ -201,12 +204,19 @@ int prntd(flag *flager, va_list varg)
 		{
 			x = len;
 			for (i = wn; x >= 0;)
-				str2[i--] = str[x--];
+			{
+				if (flager->zero && x == 0)
+					str2[0] = str[x--];
+				else
+					str2[i--] = str[x--];
+			}
 		}
 		write(1, str2, wn);
 		free(str2);
 		free(str);
 		return (wn);
 	}
-	return (write(1, str, len));
+	i = write(1, str, len);
+	free(str);
+	return (i);
 }

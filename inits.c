@@ -44,7 +44,7 @@ char *lstrgen(char *str, int stln)
 	char *lstr;
 	int i;
 
-	lstr = malloc(stln * sizeof(*lstr));
+	lstr = malloc((stln + 1) * sizeof(*lstr));
 	if (!lstr)
 		return (0);
 	sinit(lstr, stln, ' ');
