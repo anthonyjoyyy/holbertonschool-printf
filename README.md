@@ -1,8 +1,8 @@
 # Working-On:
-	sebastion - add comments
+	sebastion - add * for width
 	anthony - 
 # TODO:
-- [ ] add comments
+- [X] add comments
 - [ ] add printerr
 - [ ] add * for width
 - [ ] stuct intead of switch

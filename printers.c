@@ -126,10 +126,10 @@ int prntund(flag *flager, const char *format, int pos)
 }
 
 /**
- * prntd -
- * @flager:
- * @dig:
- * Return:
+ * prntd - print a signed int
+ * @flager: flager stuct storing format options
+ * @dig: digit to print
+ * Return: number of characters printed
  */
 int prntd(flag *flager, int dig)
 {
