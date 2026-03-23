@@ -63,7 +63,8 @@ int fstrlen(flag *flager, char *str)
 {
 	int stln = 0;
 
-	for (; str[stln]; stln++)
+	for (; str[stln]; )
+		stln++;
 	if (flager->per > -1 && flager->per < stln)
 		stln = flager->per;
 	return (stln);
