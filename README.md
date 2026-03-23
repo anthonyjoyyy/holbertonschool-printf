@@ -37,6 +37,9 @@
 		`_printf("Meaning Of Life: %d", 42);`
 		Output: Meaning Of Life: 42
 	
+### AUTHORS:
+	SEBASTION. P & ANTHONY. J
+
 # TODO:
 - [X] add comments
 - [X] free all strings
