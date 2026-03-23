@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 			else
 			{
 				pos = dflag(&flager, format, pos);
-				pos = dwidth(&flager, format, pos);
+				pos = dwidth(&flager, format, pos, varg);
 				pos = dper(&flager, format, pos);
 				pc += specifier(&flager, varg, format, pos++);
 			}

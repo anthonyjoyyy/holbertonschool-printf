@@ -40,7 +40,7 @@ int dflag(flag *flager, const char *format, int pos)
  * @pos: postion in main string
  * Return: first position in string without after width
  */
-int dwidth(flag *flager, const char *format, int pos)
+int dwidth(flag *flager, const char *format, int pos, va_list varg)
 {
 	if (flager == NULL)
 		return (-1);
@@ -50,6 +50,12 @@ int dwidth(flag *flager, const char *format, int pos)
 		{
 			flager->width = ((flager->width * 10) + (format[pos] - '0'));
 			pos++;
+		}
+		else if (format[pos] == '*')
+		{
+			flager->width = (va_arg(varg, int));
+			pos++;
+			return (pos);
 		}
 		else
 			return (pos);
