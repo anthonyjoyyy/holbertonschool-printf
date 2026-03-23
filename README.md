@@ -1,11 +1,11 @@
 # Working-On:
-	sebastion - struct instead of switch
+	sebastion - add printerr
 	anthony - 
 # TODO:
 - [X] add comments
 - [ ] add printerr
 - [X] add * for width
-- [ ] stuct intead of switch
+- [X] stuct intead of switch
 - [ ] variable naming
 - [ ] function breakdown and seporation
 - [ ] update test description
