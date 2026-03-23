@@ -1,9 +1,9 @@
 # Working-On:
-	sebastion - add printerr
+	sebastion - free all strings
 	anthony - 
 # TODO:
 - [X] add comments
-- [ ] add printerr
+- [ ] free all strings
 - [X] add * for width
 - [X] stuct intead of switch
 - [ ] variable naming
