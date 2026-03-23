@@ -1,9 +1,9 @@
 # Working-On:
-	sebastion - free all strings
+	sebastion - variable naming
 	anthony - 
 # TODO:
 - [X] add comments
-- [ ] free all strings
+- [X] free all strings
 - [X] add * for width
 - [X] stuct intead of switch
 - [ ] variable naming
