@@ -1,12 +1,12 @@
 # Working-On:
-	sebastion - variable naming
+	sebastion - update test description
 	anthony - 
 # TODO:
 - [X] add comments
 - [X] free all strings
 - [X] add * for width
 - [X] stuct intead of switch
-- [ ] variable naming
+- [X] variable naming
 - [ ] function breakdown and seporation
 - [ ] update test description
 - [ ] update componets list
