@@ -36,19 +36,19 @@ void sinit(char *str, int n, char fill)
 /**
  * lstrgen - generate a string from main string and string length
  * @str: main string to set from
- * @stln: string length
+ * @len: string length
  * Return: pointer to generated string
  */
-char *lstrgen(char *str, int stln)
+char *lstrgen(char *str, int len)
 {
 	char *lstr;
 	int i;
 
-	lstr = malloc((stln + 1) * sizeof(*lstr));
+	lstr = malloc((len + 1) * sizeof(*lstr));
 	if (!lstr)
 		return (0);
-	sinit(lstr, stln, ' ');
-	for (i = 0; str[i] && i < stln; i++)
+	sinit(lstr, len, ' ');
+	for (i = 0; str[i] && i < len; i++)
 		lstr[i] = str[i];
 	return (lstr);
 }
@@ -61,11 +61,11 @@ char *lstrgen(char *str, int stln)
  */
 int fstrlen(flag *flager, char *str)
 {
-	int stln = 0;
+	int len = 0;
 
-	for (; str[stln]; )
-		stln++;
-	if (flager->per > -1 && flager->per < stln)
-		stln = flager->per;
-	return (stln);
+	for (; str[len]; )
+		len++;
+	if (flager->per > -1 && flager->per < len)
+		len = flager->per;
+	return (len);
 }
