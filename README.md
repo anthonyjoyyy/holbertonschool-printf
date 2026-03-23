@@ -1,10 +1,10 @@
 # Working-On:
-	sebastion - add * for width
+	sebastion - struct instead of switch
 	anthony - 
 # TODO:
 - [X] add comments
 - [ ] add printerr
-- [ ] add * for width
+- [X] add * for width
 - [ ] stuct intead of switch
 - [ ] variable naming
 - [ ] function breakdown and seporation
