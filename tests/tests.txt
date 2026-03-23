@@ -8,5 +8,13 @@ test6.c - test dwidth, pass number of tests to run
 test7.c - test %s printing with flag and width support
 test8.c - test character count/return value
 test9.c - test all functionality for strings and char prining
+test10.c - test printing null string
+test11.c - test printing % before null byte
+test12.c - test printing negatives
+test13.c - test printing INT_MIN
+test14.c - test printing 0
+test15.c - test printing persision
+test16.c - test printing * for width
+test17.c - test printing for multiple strings
 finit-tester - test finit function
 main.c - holberton project example tester
