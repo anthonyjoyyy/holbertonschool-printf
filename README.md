@@ -1,5 +1,5 @@
 # Working-On:
-	sebastion - update test description
+	sebastion - update components list
 	anthony - 
 # TODO:
 - [X] add comments
@@ -8,6 +8,6 @@
 - [X] stuct intead of switch
 - [X] variable naming
 - [ ] function breakdown and seporation
-- [ ] update test description
+- [X] update test description
 - [ ] update componets list
 - [ ] update readme for secription
