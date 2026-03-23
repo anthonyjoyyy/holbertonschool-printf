@@ -13,11 +13,12 @@ int prntchar(char a)
 /**
  * prntc - print a character with formating
  * @flager: pointer to flag type variable
- * @c: character to print
+ * @varg: va_list containing character to print
  * Return: number of characters printed
  */
-int prntc(flag *flager, char c)
+int prntc(flag *flager, va_list varg)
 {
+	char c = va_arg(varg, int);
 	char *a;
 	int n;
 
@@ -47,11 +48,12 @@ int prntc(flag *flager, char c)
 /**
  * prnts - prints a string formated with flags and width
  * @flager: pointer to flag stuct containing flag and width settings
- * @str: string to print
+ * @varg: va_list containing string to print
  * Return: number of characters printed
  */
-int prnts(flag *flager, char *str)
+int prnts(flag *flager, va_list varg)
 {
+	char *str = va_arg(varg, char *);
 	char *lstr;
 	int stln, i, x;
 
@@ -128,11 +130,12 @@ int prntund(flag *flager, const char *format, int pos)
 /**
  * prntd - print a signed int
  * @flager: flager stuct storing format options
- * @dig: digit to print
+ * @varg: va_list contianing digit to print
  * Return: number of characters printed
  */
-int prntd(flag *flager, int dig)
+int prntd(flag *flager, va_list varg)
 {
+	int dig = va_arg(varg, int);
 	char *str;
 	char *tmpstr;
 	int dig2 = dig;

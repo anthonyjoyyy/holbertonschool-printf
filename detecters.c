@@ -38,6 +38,7 @@ int dflag(flag *flager, const char *format, int pos)
  * @flager: pointer to flag stuct to store width
  * @format: main string to get width from
  * @pos: postion in main string
+ * @varg: incase of *, used for finding paramater
  * Return: first position in string without after width
  */
 int dwidth(flag *flager, const char *format, int pos, va_list varg)

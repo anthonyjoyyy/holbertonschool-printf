@@ -10,25 +10,21 @@
  */
 int specifier(flag *flager, va_list varg, const char *format, int pos)
 {
+	formats forms[] = {
+	{'c', prntc},
+	{'s', prnts},
+	{'d', prntd},
+	{'i', prntd},
+	{'\0', '\0'}
+	};
 	char c = format[pos];
-	int cc;
+	int i = 0;
 
-	switch (c)
+	while (forms[i].spec)
 	{
-	case 'c':
-		cc = prntc(flager, va_arg(varg, int));
-		return (cc);
-	case 's':
-		cc = prnts(flager, va_arg(varg, char *));
-		return (cc);
-	case 'd':
-		cc = prntd(flager, va_arg(varg, int));
-		return (cc);
-	case 'i':
-		cc = prntd(flager, va_arg(varg, int));
-		return (cc);
-	default:
-		cc = prntund(flager, format, pos);
-		return (cc);
+		if (forms[i].spec == c)
+			return (forms[i].f(flager, varg));
+		i++;
 	}
+	return (prntund(flager, format, pos));
 }

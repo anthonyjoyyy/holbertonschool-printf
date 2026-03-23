@@ -26,11 +26,21 @@ typedef struct flag
 	int per;
 	int flaged;
 } flag;
+/**
+ * struct formats - stores a format and corisponding function
+ * @spec: stores format repisentitive
+ * @f: stores matching function
+ */
+typedef struct formats
+{
+	char spec;
+	int (*f)(flag *, va_list);
+} formats;
 
 int specifier(flag *, va_list, const char *, int);
-int prntc(flag *, char);
-int prnts(flag *, char *);
-int prntd(flag *, int);
+int prntc(flag *, va_list);
+int prnts(flag *, va_list);
+int prntd(flag *, va_list);
 int prntund(flag *, const char *, int);
 int prntchar(char);
 void finit(flag *);
