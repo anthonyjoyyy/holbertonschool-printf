@@ -1,34 +1,22 @@
 _printf - main function
 
 flag - stuct for storing flags
+formats - store a character and a matching format function
 finit - initializer for flag stuct
 sinit - initialize a string to ' ' and terminate
 
 dflags - detect flags from given string and update a flag struct, returning new string position
 dwidth - detect width in given string and save to flag struct, returning new string pos
+dper - detect the . marker and save the following number to flag struct
+
 lstrgen - allocate space for a string based on length and  fill with main str
 fstrlen - get the length of a string, and change based on per flag
-specifier - execute the apropriate fuction given a string and position, and pass flag struct and va_arg
+inttostr - convert and int to a string, saving the '-' 
+revstr - reverse a section of a string
 
+specifier - execute the apropriate fuction given a string and position, and pass flag struct and va_arg
 prntchar - print a single given char and return number of printed character
 prntc - print a singe char formated with flags and widt and return number of printed characterh
 prnts - print a string with width and flag and return number of printed characters
+prntd - print an signed int with flag and return printed characters
 prntund - handle printing of an undifined specifier
-
-yet to make:
-dper:
-	take flag struct, string, and string pos
-	return new string pos
-	int (struct flag*, char *, int)
-func for %d:
-	print int from varg
-	suported flags:
-	{'0','+','-',' ','1..9'}
-	in-progress prototype:
-	printc(flag *, va_arg(varg, int));
-func for %f:
-	print float form varg
-	suported flags:
-	{'0','+','-',' ','1..9','.'}
-	in-progress prototype:
-	printc(flag *, va_arg(varg, float));

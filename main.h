@@ -37,21 +37,26 @@ typedef struct formats
 	int (*f)(flag *, va_list);
 } formats;
 
+void finit(flag *);
+void sinit(char *, int, char);
+
+int dflag(flag *, const char *, int);
+int dwidth(flag *, const char *, int, va_list);
+int dper(flag *, const char *, int);
+
+int fstrlen(flag *flager, char *str);
+char *lstrgen(char *, int);
+char *inttostr(int, int);
+void revstr(char *, int, int);
+
 int specifier(flag *, va_list, const char *, int);
 int prntc(flag *, va_list);
 int prnts(flag *, va_list);
 int prntd(flag *, va_list);
 int prntund(flag *, const char *, int);
 int prntchar(char);
-void finit(flag *);
-void sinit(char *, int, char);
-char *lstrgen(char *, int);
-char *inttostr(int, int);
-void revstr(char *, int, int);
-int fstrlen(flag *flager, char *str);
+
 int _printf(const char *format, ...);
-int dflag(flag *, const char *, int);
-int dwidth(flag *, const char *, int, va_list);
-int dper(flag *, const char *, int);
+
 
 #endif
