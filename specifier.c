@@ -15,7 +15,7 @@ int specifier(flag *flager, va_list varg, const char *format, int pos)
 	{'s', prnts},
 	{'d', prntd},
 	{'i', prntd},
-	{'\0', '\0'}
+	{'\0', NULL}
 	};
 	char c = format[pos];
 	int i = 0;
